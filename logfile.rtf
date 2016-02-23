@@ -1,0 +1,214 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red255\green223\blue11;\red34\green79\blue188;\red97\green0\blue1;
+\red88\green229\blue64;\red0\green0\blue216;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 Step 1:  Create a github account at github.com\
+Step 2:  Make a new repository\
+Step 3: Download the repository on the local machine \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\fs22 \cf2 \cb3 \CocoaLigature0 zhenlin$ git clone https://github.com/ZhenJamesLin/newGitTest.git\
+\
+\cf0 \cb1 Step 4: Check status \
+\cf2 \cb3 Zhens-MacBook-Pro:newGitTest zhenlin$ git status\
+On branch master\
+Your branch is up-to-date with 'origin/master'.\
+nothing to commit, working directory clean\
+\cf0 \cb1 Step 5: Create a file in the github directory\
+Step 6: Check status (turns out test_file.txt is untracked)\
+\cf2 \cb3 Zhens-MacBook-Pro:newGitTest zhenlin$ git status\
+On branch master\
+Your branch is up-to-date with 'origin/master'.\
+Untracked files:\
+  (use "git add <file>..." to include in what will be committed)\
+\
+	\cf4 \cb3 test_file.txt\cf2 \cb3 \
+\
+nothing added to commit but untracked files present (use "git add" to track)\
+\cf0 \cb1 Step 7: git add test_file.txt\
+\cf2 \cb3 Zhens-MacBook-Pro:newGitTest zhenlin$ git add test_file.txt\
+\cf0 \cb1 Step 8: Check status (file is added)\
+\cf2 \cb3 Zhens-MacBook-Pro:newGitTest zhenlin$ git status\
+On branch master\
+Your branch is up-to-date with 'origin/master'.\
+Changes to be committed:\
+  (use "git reset HEAD <file>..." to unstage)\
+\
+	\cf5 \cb3 new file:   test_file.txt\
+\cf0 \cb1 Step 9: git commit (Now, added file is committed, but file is still on the local machine) -m means message\
+\cf2 \cb3 Zhens-MacBook-Pro:newGitTest zhenlin$ git commit -m "added test_file.txt"\
+[master e788892] added test_file.txt\
+ Committer: Zhen Lin <zhenlin@Zhens-MacBook-Pro.local>\
+Your name and email address were configured automatically based\
+on your username and hostname. Please check that they are accurate.\
+You can suppress this message by setting them explicitly. Run the\
+following command and follow the instructions in your editor to edit\
+your configuration file:\
+\
+    git config --global --edit\
+\
+After doing this, you may fix the identity used for this commit with:\
+\
+    git commit --amend --reset-author\
+\
+ 1 file changed, 1 insertion(+)\
+ create mode 100644 test_file.txt\
+\cf0 \cb1 Step 10: git push (sync with github.com)\
+\cf2 \cb3 Zhens-MacBook-Pro:newGitTest zhenlin$ git push\
+warning: push.default is unset; its implicit value has changed in\
+Git 2.0 from 'matching' to 'simple'. To squelch this message\
+and maintain the traditional behavior, use:\
+\
+  git config --global push.default matching\
+\
+To squelch this message and adopt the new behavior now, use:\
+\
+  git config --global push.default simple\
+\
+When push.default is set to 'matching', git will push local branches\
+to the remote branches that already exist with the same name.\
+\
+Since Git 2.0, Git defaults to the more conservative 'simple'\
+behavior, which only pushes the current branch to the corresponding\
+remote branch that 'git pull' uses to update the current branch.\
+\
+See 'git help config' and search for 'push.default' for further information.\
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode\
+'current' instead of 'simple' if you sometimes use older versions of Git)\
+\
+Username for 'https://github.com': ZhenJamesLin\
+Password for 'https://ZhenJamesLin@github.com': \
+Counting objects: 3, done.\
+Delta compression using up to 4 threads.\
+Compressing objects: 100% (2/2), done.\
+Writing objects: 100% (3/3), 315 bytes | 0 bytes/s, done.\
+Total 3 (delta 0), reused 0 (delta 0)\
+To https://github.com/ZhenJamesLin/newGitTest.git\
+   000e19a..e788892  master -> master\
+\cf0 \cb1 Step 11: git pull (only works when in the github directory)\
+\cf2 \cb3 Zhens-MacBook-Pro:newGitTest zhenlin$ git pull\
+Already up-to-date.\cf0 \cb1 \
+Step 12: git pull (in a second/different location of the same directory name)\
+\cf2 \cb3 Zhens-MacBook-Pro:new_GitTest_2 zhenlin$ cd newGitTest/\
+Zhens-MacBook-Pro:newGitTest zhenlin$ ls\
+README.md	test_file.txt\
+Zhens-MacBook-Pro:newGitTest zhenlin$ git pull\
+remote: Counting objects: 3, done.\
+remote: Compressing objects: 100% (2/2), done.\
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0\
+Unpacking objects: 100% (3/3), done.\
+From https://github.com/ZhenJamesLin/newGitTest\
+   e788892..388a4fb  master     -> origin/master\
+Updating e788892..388a4fb\
+Fast-forward\
+ test_file_2.txt | 1 \cf5 \cb3 +\cf2 \cb3 \
+ 1 file changed, 1 insertion(+)\
+ create mode 100644 test_file_2.txt\
+\cf0 \cb1 Step 13:  modify test_file_2.txt in _2 directory and check status\
+\cf2 \cb3 Zhens-MacBook-Pro:newGitTest zhenlin$ git status\
+On branch master\
+Your branch is up-to-date with 'origin/master'.\
+Changes not staged for commit:\
+  (use "git add <file>..." to update what will be committed)\
+  (use "git checkout -- <file>..." to discard changes in working directory)\
+\
+	\cf4 \cb3 modified:   test_file_2.txt\cf2 \cb3 \
+\
+no changes added to commit (use "git add" and/or "git commit -a")\
+\cf0 \cb1 Step 14:  Add\
+\cf2 \cb3 Zhens-MacBook-Pro:newGitTest zhenlin$ git add test_file_2.txt\
+\cf0 \cb1 Step 15: Check status\
+\cf2 \cb3 Zhens-MacBook-Pro:newGitTest zhenlin$ git add test_file_2.txt\
+Zhens-MacBook-Pro:newGitTest zhenlin$ git status\
+On branch master\
+Your branch is up-to-date with 'origin/master'.\
+Changes to be committed:\
+  (use "git reset HEAD <file>..." to unstage)\
+\
+	\cf5 \cb3 modified:   test_file_2.txt\
+\cf0 \cb1 Step 16: Commit (can use -A flag meaning all the files in the directory)\
+\cf2 \cb3 Zhens-MacBook-Pro:newGitTest zhenlin$ git commit -m "add another file"\
+[master ae46751] add another file\
+ Committer: Zhen Lin <zhenlin@Zhens-MacBook-Pro.local>\
+Your name and email address were configured automatically based\
+on your username and hostname. Please check that they are accurate.\
+You can suppress this message by setting them explicitly. Run the\
+following command and follow the instructions in your editor to edit\
+your configuration file:\
+\
+    git config --global --edit\
+\
+After doing this, you may fix the identity used for this commit with:\
+\
+    git commit --amend --reset-author\
+\
+ 1 file changed, 2 insertions(+), 1 deletion(-)\
+\cf0 \cb1 Step 17: git push\
+\cf2 \cb3 Zhens-MacBook-Pro:newGitTest zhenlin$ git push\
+warning: push.default is unset; its implicit value has changed in\
+Git 2.0 from 'matching' to 'simple'. To squelch this message\
+and maintain the traditional behavior, use:\
+\
+  git config --global push.default matching\
+\
+To squelch this message and adopt the new behavior now, use:\
+\
+  git config --global push.default simple\
+\
+When push.default is set to 'matching', git will push local branches\
+to the remote branches that already exist with the same name.\
+\
+Since Git 2.0, Git defaults to the more conservative 'simple'\
+behavior, which only pushes the current branch to the corresponding\
+remote branch that 'git pull' uses to update the current branch.\
+\
+See 'git help config' and search for 'push.default' for further information.\
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode\
+'current' instead of 'simple' if you sometimes use older versions of Git)\
+\
+Counting objects: 3, done.\
+Delta compression using up to 4 threads.\
+Compressing objects: 100% (2/2), done.\
+Writing objects: 100% (3/3), 285 bytes | 0 bytes/s, done.\
+Total 3 (delta 1), reused 0 (delta 0)\
+To https://github.com/ZhenJamesLin/newGitTest.git\
+   388a4fb..ae46751  master -> master\
+\cf0 \cb1 Step 18: git pull in the _1 directory\
+\cf2 \cb3 Zhens-MacBook-Pro:newGitTest zhenlin$ git pull\
+remote: Counting objects: 3, done.\
+remote: Compressing objects: 100% (1/1), done.\
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0\
+Unpacking objects: 100% (3/3), done.\
+From https://github.com/ZhenJamesLin/newGitTest\
+   388a4fb..ae46751  master     -> origin/master\
+Updating 388a4fb..ae46751\
+Fast-forward\
+ test_file_2.txt | 3 \cf5 \cb3 ++\cf4 \cb3 -\cf2 \cb3 \
+ 1 file changed, 2 insertions(+), 1 deletion(-)\
+\cf0 \cb1 Step 19:  Modify test_file_2.txt in _1 directory\
+\cf2 \cb3 Zhens-MacBook-Pro:newGitTest zhenlin$ git status\
+On branch master\
+Your branch is up-to-date with 'origin/master'.\
+Changes not staged for commit:\
+  (use "git add <file>..." to update what will be committed)\
+  (use "git checkout -- <file>..." to discard changes in working directory)\
+\
+	\cf4 \cb3 modified:   test_file_2.txt\cf2 \cb3 \
+\
+no changes added to commit (use "git add" and/or "git commit -a")\
+Zhens-MacBook-Pro:newGitTest zhenlin$ git add -A\
+Zhens-MacBook-Pro:newGitTest zhenlin$ git commit\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf6 \cb3 ~                                                                                                     \cf2 \cb3 \
+\cf6 \cb3 ~                                                                                                     \cf2 \cb3 \
+:wq\cf0 \cb1 \
+\
+If in the text screen, cannot do anything then hit \'93escape, :wq\'94 (due to missing the -m line) \
+\
+Redo the git commit line. \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf2 \cb3 Zhens-MacBook-Pro:newGitTest zhenlin$ git commit -m "more changes"\cf0 \cb1 \
+}
